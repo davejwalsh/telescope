@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <!-- Simple pattern for logs -->
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</Pattern>
+            </PatternLayout>
+        </Console>
+
+        <!-- File Appender (Optional) -->
+        <File name="File" fileName="logs/application.log">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!-- Root Logger (default level INFO) -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+
+        <!-- Package-specific Logger (Optional, adjust to your needs) -->
+        <Logger name="com.ska.telescopeSimulator" level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+    </Loggers>
+</Configuration>
