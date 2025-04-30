@@ -1,15 +1,17 @@
 package com.ska.telescopeSimulator.sky;
 
 import com.ska.telescopeSimulator.dto.DeviceCoordinates;
+import com.ska.telescopeSimulator.sky.SimulatedStar;
 
 import java.util.List;
 import java.util.Random;
 
 public class SimulatedSky {
 
-    private final int sizeX = 100;
-    private final int sizeY = 100;
-    private final int sizeZ = 100;
+    private final int offset = 100;
+    private final int sizeX = 201; // Covers -100 to 100
+    private final int sizeY = 201;
+    private final int sizeZ = 201;
     private final double[][][] sky;
     private final double maxBackground = 5;
     private final Random random = new Random();
@@ -17,7 +19,7 @@ public class SimulatedSky {
     public SimulatedSky(List<SimulatedStar> stars) {
         this.sky = new double[sizeX][sizeY][sizeZ];
         initialiseBackground();
-        stars.stream().forEach(star -> addStar(star));
+        stars.forEach(this::addStar);
     }
 
     private void initialiseBackground() {
@@ -31,12 +33,12 @@ public class SimulatedSky {
     }
 
     public void addStar(SimulatedStar star) {
-        int startX = (int) Math.max(0, Math.floor(star.getCoordinates().getX() - star.getRadius()));
-        int endX = (int) Math.min(sizeX - 1, Math.ceil(star.getCoordinates().getX() + star.getRadius()));
-        int startY = (int) Math.max(0, Math.floor(star.getCoordinates().getY() - star.getRadius()));
-        int endY = (int) Math.min(sizeY - 1, Math.ceil(star.getCoordinates().getY() + star.getRadius()));
-        int startZ = (int) Math.max(0, Math.floor(star.getCoordinates().getZ() - star.getRadius()));
-        int endZ = (int) Math.min(sizeZ - 1, Math.ceil(star.getCoordinates().getZ() + star.getRadius()));
+        int startX = (int) Math.max(-offset, Math.floor(star.getCoordinates().getX() - star.getRadius()));
+        int endX = (int) Math.min(offset, Math.ceil(star.getCoordinates().getX() + star.getRadius()));
+        int startY = (int) Math.max(-offset, Math.floor(star.getCoordinates().getY() - star.getRadius()));
+        int endY = (int) Math.min(offset, Math.ceil(star.getCoordinates().getY() + star.getRadius()));
+        int startZ = (int) Math.max(-offset, Math.floor(star.getCoordinates().getZ() - star.getRadius()));
+        int endZ = (int) Math.min(offset, Math.ceil(star.getCoordinates().getZ() + star.getRadius()));
 
         double sigma = star.getRadius() / 2.0;
         double twoSigmaSquared = 2 * sigma * sigma;
@@ -52,8 +54,12 @@ public class SimulatedSky {
                     if (distanceSquared <= star.getRadius() * star.getRadius()) {
                         double diminishedIntensity = star.getIntensity() * Math.exp(-distanceSquared / twoSigmaSquared);
 
-                        if (diminishedIntensity > sky[x][y][z]) {
-                            sky[x][y][z] = diminishedIntensity;
+                        int ix = x + offset;
+                        int iy = y + offset;
+                        int iz = z + offset;
+
+                        if (diminishedIntensity > sky[ix][iy][iz]) {
+                            sky[ix][iy][iz] = diminishedIntensity;
                         }
                     }
                 }
@@ -62,13 +68,14 @@ public class SimulatedSky {
     }
 
     public double getValueAt(DeviceCoordinates coordinate) {
-        int x = (int) Math.round(coordinate.getX());
-        int y = (int) Math.round(coordinate.getY());
-        int z = (int) Math.round(coordinate.getZ());
+        int x = (int) Math.round(coordinate.getX()) + offset;
+        int y = (int) Math.round(coordinate.getY()) + offset;
+        int z = (int) Math.round(coordinate.getZ()) + offset;
 
         if (x < 0 || x >= sizeX || y < 0 || y >= sizeY || z < 0 || z >= sizeZ) {
             throw new IllegalArgumentException("Coordinates out of bounds!");
         }
+
         double baseValue = sky[x][y][z];
         double noise = (random.nextDouble() * 2 - 1) * maxBackground;
         return baseValue + noise;

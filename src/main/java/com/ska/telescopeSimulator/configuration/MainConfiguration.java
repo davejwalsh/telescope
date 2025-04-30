@@ -20,6 +20,9 @@ public class MainConfiguration {
     @Bean(name = "proximaCentauri")
     SimulatedStar proximaCentauri() { return new SimulatedStar(new DeviceCoordinates(80.0, 80.0, 80.0), 40.0, 8.0);}
 
+    @Bean(name = "arcturus")
+    SimulatedStar arcturus() { return new SimulatedStar(new DeviceCoordinates(-20.0, -10.0, 40.0), 30.0, 10.0);}
+
     @Bean
     SimulatedSky simulatedSky(List<SimulatedStar> stars){ return new SimulatedSky(stars);}
 

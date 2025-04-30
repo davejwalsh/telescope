@@ -139,7 +139,7 @@ public class UnitTests {
         service.startSelectedDevice();
         service.setTargetCoordinatesForSelectedDevice(deviceOneTargetCoordinates);
         service.moveToTargetCoordinatesForSelectedDevice();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         assertEquals(service.getCurrentlySelectedDeviceCoordinates(), deviceOneTargetCoordinates);
 
         StatusResponse shutterTimeSetResponse = service.setShutterTime(3.0);
