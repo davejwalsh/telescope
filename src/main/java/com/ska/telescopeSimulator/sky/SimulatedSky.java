@@ -69,14 +69,8 @@ public class SimulatedSky {
         if (x < 0 || x >= sizeX || y < 0 || y >= sizeY || z < 0 || z >= sizeZ) {
             throw new IllegalArgumentException("Coordinates out of bounds!");
         }
-
-        // Get the original value at the coordinate
         double baseValue = sky[x][y][z];
-
-        // Apply random noise (can be positive or negative)
-        double noise = (random.nextDouble() * 2 - 1) * maxBackground; // Random value between -maxBackground and +maxBackground
-
-        // Return the value with noise added
+        double noise = (random.nextDouble() * 2 - 1) * maxBackground;
         return baseValue + noise;
     }
 }

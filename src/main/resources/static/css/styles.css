@@ -1,313 +1,321 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+	font-family: Arial, sans-serif;
+	margin: 20px;
 }
 
 button {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
-
-
 #device-control {
-  border: 2px solid black;
-  padding: 2%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background-color: grey;
+	border: 2px solid black;
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: grey;
 }
 
 #sub-device-control h2 {
-  margin: 0;
-  text-align: left;
+	margin: 0;
+	text-align: left;
 }
 
 #sub-device-selection {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 20px;
 
 }
 
-#sub-add-device, #sub-select-device, #sub-attached-devices {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5%;
-  background-color: white;
-  border:1px solid black;
-  border-radius: 5%;
-  padding:2%;
-  width:20%;
+#sub-add-device,
+#sub-select-device,
+#sub-attached-devices {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 5%;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5%;
+	padding: 2%;
+	width: 20%;
 }
-
 
 
 #deviceList {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 #currentDeviceId {
-  margin-top: 5px;
-  padding: 5px;
+	margin-top: 5px;
+	padding: 5px;
 }
-
 
 
 .device-box {
-  border: 2px solid black;
-  margin-top: 20px;
-  padding:2%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background-color: lightgrey;
+	border: 2px solid black;
+	margin-top: 20px;
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: lightgrey;
 }
 
 .message-box {
-  border: 2px solid #ccc;
-  padding: 10px;
-  margin-top: 20px;
-  background-color: #f4f4f4;
-  height: 150px;
-  overflow-y: auto;
+	border: 2px solid #ccc;
+	padding: 10px;
+	margin-top: 20px;
+	background-color: #f4f4f4;
+	height: 150px;
+	overflow-y: auto;
 }
 
 .status-box {
-  border: 1px solid black;
-  margin: 2%;
-  padding: 2%;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  border-radius: 100%;
-  padding: 2%;
+	border: 1px solid black;
+	margin: 2%;
+	padding: 2%;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	border-radius: 100%;
+	padding: 2%;
 }
 
 .header-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .header-box h2 {
-  text-align: left;
-  margin: 0;
+	text-align: left;
+	margin: 0;
 }
 
 #target-coordinates-box,
 #motor-position-box,
 #power-reading {
-  border: 1px solid black;
-  margin: 2%;
-  padding: 2%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background-color: lightblue;
+	border: 1px solid black;
+	margin: 2%;
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	background-color: lightblue;
 }
 
 #sub-target-coordinate-box {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 #sub-target-coordinates {
-  display: flex;
-  justify-content: space-around;
-  /*! flex-wrap: wrap; */
-  gap: 20px;
+	display: flex;
+	justify-content: space-around;
+	/*! flex-wrap: wrap; */
+	gap: 20px;
 }
 
-#sub-target-coordinates > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#sub-target-coordinates>div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #sub-target-coordinates input {
-  width: 8vw;
-  min-width: 60px;
-  padding: 5px;
-  margin-top: 5px;
-  text-align: center;
+	width: 8vw;
+	min-width: 60px;
+	padding: 5px;
+	margin-top: 5px;
+	text-align: center;
 }
 
 #sub-motor-position {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 #sub-position-readout {
-  display: flex;
-  justify-content: space-around;
-  /*! flex-wrap: wrap; */
-  gap: 20px;
+	display: flex;
+	justify-content: space-around;
+	/*! flex-wrap: wrap; */
+	gap: 20px;
 }
 
 .position-readout {
-  min-width: 80px;
-  text-align: center;
+	min-width: 80px;
+	text-align: center;
 }
 
-#motor-control-box, #power-control-box{
-  border:1px solid black;
-  padding:2%;
-  background-color: white;
+#motor-control-box,
+#power-control-box {
+	border: 1px solid black;
+	padding: 2%;
+	background-color: white;
 }
 
-#sub-motor-position-buttons, #sub-power-reading-buttons{
-  text-align: center;
-  vertical-align: middle;
-  padding:2%;
-  background:darkgrey;
+#sub-motor-position-buttons,
+#sub-power-reading-buttons {
+	text-align: center;
+	vertical-align: middle;
+	padding: 2%;
+	background: darkgrey;
 }
 
 .status-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 90%;
-  background-color: #f9f9f9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	width: 90%;
+	background-color: #f9f9f9;
 }
 
 .sub-status-box {
-  text-align: center;
-  width: 100%;
+	text-align: center;
+	width: 100%;
 }
 
 h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+	font-size: 18px;
+	margin-bottom: 10px;
 }
 
 .status-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #4CAF50;
+	color: white;
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 button {
-  padding: 8px 16px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
+	padding: 8px 16px;
+	background-color: #007BFF;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 10px;
 }
 
 button:hover {
-  background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 #overpowered {
-  display: none;
+	display: none;
 }
 
-#sub-movementRate, #sub-shutterTime{
-  display: inline-flex;
-  width: 90%;
-  justify-content: center;
+#sub-movementRate,
+#sub-shutterTime {
+	display: inline-flex;
+	width: 90%;
+	justify-content: center;
 }
 
-#movement-rate, #shutter-time{
-  margin: 2%;
+#movement-rate,
+#shutter-time {
+	margin: 2%;
 }
 
-#control-boxes{
-  display: inline-flex;
+#control-boxes {
+	display: inline-flex;
 }
 
-#motor-control-box, #power-control-box{
-  margin: 2%;
-  width: 40%;
+#motor-control-box,
+#power-control-box {
+	margin: 2%;
+	width: 40%;
 }
 
-#shutter-time-button, #movement-rate-button{
-  padding:2%;
-  margin: 2%;
-  width:50%;
+#shutter-time-button,
+#movement-rate-button {
+	padding: 2%;
+	margin: 2%;
+	width: 50%;
 }
 
-#device-status-box{
-  color:White;
+#device-status-box {
+	color: White;
 }
 
-.sub-device-control{
-  text-align: center;
+.sub-device-control {
+	text-align: center;
 }
 
-#sub-device-selection{
-  text-align: center;
-  width:100%;
+#sub-device-selection {
+	text-align: center;
+	width: 100%;
 }
 
 ul {
-  padding-left: 0;
+	padding-left: 0;
 }
 
 li {
-  list-style-type: none;
-}
-#sub-select-device{
-  display: flex;
-}
-#telescope, #settings{
-  width:5%;
-  color: white;
-    padding-right:5%;
-}
-#sub-messages-control {
-   color: white;
-    background-color: darkgray;
-    padding: 2%;
+	list-style-type: none;
 }
 
-#sub-telescope-control{
-  color:white;
-  background-color: darkgray;
-  padding: 2%;
-      display: inline-flex;
-      justify-content: space-between;
+#sub-select-device {
+	display: flex;
+}
+
+#telescope,
+#settings {
+	width: 5%;
+	color: white;
+	padding-right: 5%;
+}
+
+#sub-messages-control {
+	color: white;
+	background-color: darkgray;
+	padding: 2%;
+}
+
+#sub-telescope-control {
+	color: white;
+	background-color: darkgray;
+	padding: 2%;
+	display: inline-flex;
+	justify-content: space-between;
 }
 
 
 #sub-device-header {
-  color:white;
-  background-color: darkgray;
-  padding: 2%;
-      display: inline-flex;
-      justify-content: space-between;
+	color: white;
+	background-color: darkgray;
+	padding: 2%;
+	display: inline-flex;
+	justify-content: space-between;
 }
 
 #overpowered {
-  display: none; /* or visibility: hidden if you're using that logic */
-  background-color: red;
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  margin: 10px 0;
+	display: none;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 10px 0;
 }
