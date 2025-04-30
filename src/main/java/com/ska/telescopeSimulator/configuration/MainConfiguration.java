@@ -13,7 +13,6 @@ import java.util.List;
 @Configuration
 public class MainConfiguration {
 
-
     @Bean(name = "alphaCentauri")
     SimulatedStar alphaCentauri() { return new SimulatedStar(new DeviceCoordinates(20.0, 20.0, 20.0), 20.0, 5.0);}
 
