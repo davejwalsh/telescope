@@ -32,7 +32,6 @@ public class EndpointsController {
         return service.induceReceiverError();
     }
 
-
     @PostMapping("/startDevice")
     public StatusResponse startDevice() {
         return service.startSelectedDevice();
