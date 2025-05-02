@@ -22,8 +22,6 @@
 !gradle/wrapper/gradle-wrapper.jar
 /build/
 /.gradle/
-gradle-wrapper.jar
-gradle-wrapper.properties
 
 hs_err_pid*
 replay_pid*
