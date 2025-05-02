@@ -73,12 +73,13 @@ public class TelescopeReceiverDeviceImpl implements TelescopeReceiverDevice {
     public StatusResponse stopReceiving() {
         if (shutterOpenTime != -1.0) {
             if (currentTaskRunningFor < shutterOpenTime) {
-                return new StatusResponse(StatusCode.FAIL, "Shutter time set, " + (shutterOpenTime - currentTaskRunningFor) + "ms left before telescope can be moved");
+                return new StatusResponse(StatusCode.FAIL, "Shutter time set, " + (shutterOpenTime - currentTaskRunningFor) + "s left before telescope can be moved");
             }
         }
         if (receivingTask != null && !receivingTask.isDone()) {
             receivingTask.cancel(true);
         }
+        currentTaskRunningFor = 0.0;
         LOGGER.info("Stopped receiving telescope telemetry");
         receiverState = ReceiverState.IDLE;
         notifyReceiverStateChanged();
