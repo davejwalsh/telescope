@@ -17,10 +17,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Java JDK 17
+      - name: Java JDK 22
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '22'
           distribution: 'temurin'
 
       - name: Allow gradle execution
